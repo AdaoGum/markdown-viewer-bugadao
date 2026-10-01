@@ -1,0 +1,4 @@
+# Lido pelo Cloudflare Pages (não é publicado como arquivo).
+# Os arquivos de /assets/ têm hash no nome, então podem ficar em cache para sempre.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -332,6 +332,7 @@ async function exportFromGallery(id: string) {
   <footer class="site-footer">
     <div class="container">
       Markdown Viewer Bugadão · <code>@bugadao/markdown-viewer</code> · MIT · feito com Vue 3, unified, docx, JSZip, html2pdf.js e html-to-image.
+      <p class="selo-bugadao">Um projeto <a href="https://bugadao.com">bugadão</a>: conheça os outros.</p>
     </div>
   </footer>
 </template>

@@ -529,3 +529,14 @@ a:focus-visible {
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
+
+.site-footer .selo-bugadao {
+  margin: 10px 0 0;
+}
+
+.site-footer .selo-bugadao a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

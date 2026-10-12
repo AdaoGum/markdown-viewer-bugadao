@@ -27,20 +27,16 @@ Scripts separados: `npm run build:lib` (pacote npm) e `npm run build:demo` (site
 
 ## Publicando o site (markdown.bugadao.com)
 
-O site de demonstração fica no **Cloudflare Pages**, projeto `markdown-viewer-bugadao` (Direct Upload), no mesmo esquema do site do LoL. O DNS de `bugadao.com` está na **Hostinger**, então o subdomínio é um CNAME lá.
+O site de demonstração fica no **Cloudflare Pages**, projeto `markdown-viewer-bugadao` (Direct Upload). O DNS de `bugadao.com` está na **Cloudflare** (desde 11/10/2026), com o CNAME `markdown` → `markdown-viewer-bugadao.pages.dev` e o custom domain `markdown.bugadao.com` ligado no projeto.
 
-Primeira vez:
+Publicar: `npm run deploy:site` (roda os testes, gera o site e publica). Confira em https://markdown.bugadao.com.
 
-1. Autentique o wrangler, se ainda não estiver (`npx wrangler whoami` para conferir): `npx wrangler login`
-2. Crie o projeto: `npx wrangler pages project create markdown-viewer-bugadao --production-branch=main`
-3. Publique: `npm run deploy:site` e confira `https://markdown-viewer-bugadao.pages.dev`
-4. Cloudflare → **Workers & Pages → markdown-viewer-bugadao → Custom domains → Set up a custom domain** → `markdown.bugadao.com`
-5. Hostinger → **Domínios → bugadao.com → DNS**: CNAME `markdown` → `markdown-viewer-bugadao.pages.dev` (TTL 300)
-6. Aguarde o domínio ficar **Active** no Pages e abra `https://markdown.bugadao.com`
+Montar do zero (só se o projeto do Pages sumir):
 
-Atualizações: só `npm run deploy:site` (roda os testes, gera o site e publica).
-
-> Se o DNS de `bugadao.com` for migrado para a Cloudflare, inclua o CNAME `markdown` na conferência dos registros importados, senão o site cai quando a troca de nameservers propagar.
+1. `npx wrangler whoami` (se precisar, `npx wrangler login`).
+2. `npx wrangler pages project create markdown-viewer-bugadao --production-branch=main`
+3. `npm run deploy:site` e confira `https://markdown-viewer-bugadao.pages.dev`.
+4. Cloudflare → **Workers & Pages → markdown-viewer-bugadao → Custom domains** → `markdown.bugadao.com` (a Cloudflare cria o CNAME, porque a zona está lá).
 
 ## Estrutura
 

@@ -19,6 +19,13 @@ Componente Vue 3 (`@bugadao/markdown-viewer`, em `src/lib/`) + site de demonstra
    o schema sem motivo — o componente roda Markdown de terceiros.
 5. Textos da interface existem em inglês e pt-BR (`core/i18n`): texto novo vai nos dois.
 
+## Economia de contexto
+
+- Para entender um formato, abra só o módulo dele em `src/lib/exporters/` e o teste
+  correspondente em `tests/`, não a pasta inteira.
+- `dist/`, `dist-demo/` (bundles de até ~900 KB) e `package-lock.json` estão bloqueados
+  no `.claude/settings.json`. Tamanho de pacote se confere pela saída do build.
+
 ## Antes de dizer "pronto"
 
 ```bash
